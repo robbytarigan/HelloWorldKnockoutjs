@@ -3,4 +3,40 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+@{ Html.BeginForm();}
+
 <h2>Home</h2>
+
+<h3>Meal upgrades</h3>
+<p>Make your flight more bearable by selecting a meal to match your social and economic status.</p>
+Chosen meal: <select id="Id" name="Id" data-bind="options: availableMeals,                                 
+                                optionsText: 'mealName',                                
+                                value: chosenMeal"></select>
+
+<p>    
+    You've chosen:     <b data-bind="text: chosenMeal().description"></b>    (price: <span data-bind='text: formatPrice(chosenMeal().extraCost)'></span>)
+</p>
+
+
+@{ Html.EndForm();}
+
+
+<script type="text/javascript">
+    function formatPrice(price) {
+        return price == 0 ? "Free" : "$" + price.toFixed(2); 
+    }
+
+    var availableMeals = [
+        { mealName: 'Standard', description: 'Dry crusts of bread', extraCost: 0 },
+        { mealName: 'Premium', description: 'Fresh bread with cheese', extraCost: 9.95 },
+        { mealName: 'Deluxe', description: 'Caviar and vintage Dr Pepper', extraCost: 18.50 }
+    ];
+
+    var viewModel = {
+        chosenMeal: ko.observable(availableMeals[0])    
+    };
+
+    ko.applyBindings(viewModel); // Makes Knockout get to work
+</script>
+

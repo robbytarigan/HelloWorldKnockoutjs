@@ -11,10 +11,15 @@ namespace HelloWorldKnockoutjs.Controllers
         //
         // GET: /Home/
 
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Index(string id) {
+            return View("Index", id);
+        }
     }
 }
