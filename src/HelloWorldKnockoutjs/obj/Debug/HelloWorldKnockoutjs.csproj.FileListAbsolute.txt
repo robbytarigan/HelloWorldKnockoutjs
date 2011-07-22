@@ -1,0 +1,5 @@
+E:\Data\Projects\GitHome\HelloWorldKnockoutjs\src\HelloWorldKnockoutjs\bin\HelloWorldKnockoutjs.dll
+E:\Data\Projects\GitHome\HelloWorldKnockoutjs\src\HelloWorldKnockoutjs\bin\HelloWorldKnockoutjs.pdb
+E:\Data\Projects\GitHome\HelloWorldKnockoutjs\src\HelloWorldKnockoutjs\obj\Debug\ResolveAssemblyReference.cache
+E:\Data\Projects\GitHome\HelloWorldKnockoutjs\src\HelloWorldKnockoutjs\obj\Debug\HelloWorldKnockoutjs.dll
+E:\Data\Projects\GitHome\HelloWorldKnockoutjs\src\HelloWorldKnockoutjs\obj\Debug\HelloWorldKnockoutjs.pdb
