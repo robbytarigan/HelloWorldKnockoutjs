@@ -1,26 +1,33 @@
-﻿@{
+﻿@model HelloWorldKnockoutjs.Models.Meal
+
+@{
     ViewBag.Title = "Home";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    // Add comment here
+    Layout = "~/Views/Shared/_Layout.cshtml";    
 }
 
 
-@{ Html.BeginForm();}
+@using (Html.BeginForm()) {
 
 <h2>Home</h2>
+    
+<p>On postback you have chosen @Html.DisplayTextFor(m=> m.Name) </p>    
 
 <h3>Meal upgrades</h3>
 <p>Make your flight more bearable by selecting a meal to match your social and economic status.</p>
-Chosen meal: <select id="Id" name="Id" data-bind="options: availableMeals,                                 
+@Html.LabelFor(m=> m.Name, "Chosen meal:")        
+<select data-bind="options: availableMeals,                                 
                                 optionsText: 'mealName',                                
-                                value: chosenMeal"></select>
-
+                                value: chosenMeal"></select>            
+<input id="Name" name="Name" type="hidden" data-bind="value: chosenMeal().mealName" />
+    
 <p>    
     You've chosen:     <b data-bind="text: chosenMeal().description"></b>    (price: <span data-bind='text: formatPrice(chosenMeal().extraCost)'></span>)
 </p>
 
-
-@{ Html.EndForm();}
+    <p>
+        <input type="submit" value="Submit" />
+    </p>
+}
 
 
 <script type="text/javascript">

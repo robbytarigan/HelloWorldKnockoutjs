@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HelloWorldKnockoutjs.Models;
 
 namespace HelloWorldKnockoutjs.Controllers
 {
@@ -11,15 +12,17 @@ namespace HelloWorldKnockoutjs.Controllers
         //
         // GET: /Home/
 
-        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Index(string id) {
-            return View("Index", id);
+        public ActionResult Index(Meal postedMeal) {
+            if (postedMeal != null)
+                return View("Index", postedMeal);
+            else
+                return View("Index", new Meal() { Name = "Standard" });
         }
     }
 }
