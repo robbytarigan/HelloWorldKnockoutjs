@@ -24,6 +24,16 @@
     You've chosen:     <b data-bind="text: chosenMeal().description"></b>    (price: <span data-bind='text: formatPrice(chosenMeal().extraCost)'></span>)
 </p>
 
+<p>
+    <button data-bind="enable: count < 5">Add</button>
+</p>
+    
+    
+<p>
+    There are <span data-bind="text: count"></span> available meals.
+</p>     
+    
+        
     <p>
         <input type="submit" value="Submit" />
     </p>
@@ -38,11 +48,13 @@
     var availableMeals = [
         { mealName: 'Standard', description: 'Dry crusts of bread', extraCost: 0 },
         { mealName: 'Premium', description: 'Fresh bread with cheese', extraCost: 9.95 },
-        { mealName: 'Deluxe', description: 'Caviar and vintage Dr Pepper', extraCost: 18.50 }
+        { mealName: 'Deluxe', description: 'Caviar and vintage Dr Pepper', extraCost: 18.50 },
+        { mealName: 'Super', description: 'Thai curry and wine', extraCost: 20.34 }
     ];
 
     var viewModel = {
-        chosenMeal: ko.observable(availableMeals[0])    
+        chosenMeal: ko.observable(availableMeals[0]),
+        count: availableMeals.length
     };
 
     ko.applyBindings(viewModel); // Makes Knockout get to work
